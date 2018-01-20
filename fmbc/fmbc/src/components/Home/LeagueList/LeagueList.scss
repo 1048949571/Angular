@@ -1,0 +1,47 @@
+.list{
+    height: 1rem;
+}
+.listTop{
+    height: .4rem;
+    color: #999;
+    font-size: .12rem;
+    padding: 0 .1rem;
+    line-height: .4rem;
+}
+.listBotm{
+    height: .6rem;
+    display: flex;
+}
+.listBotm span{
+    display: inline-block;
+    height: .6rem;
+}
+.BotmLeft{
+    flex: 2;
+}
+.BotmRight{
+    flex: 1;
+    line-height: .6rem;
+    text-align: center;
+}
+.BotmRight b{
+    color: #999;
+    font-size: .12rem;
+
+}
+.BotmLeft p{
+    height: .3rem;
+}
+.BotmLeft p b{
+    display: inline-block;
+    height: .3rem;
+    color: #444;
+    font-size: .14rem;
+    line-height: .3rem;
+    float: left;
+    margin-left: .1rem;
+}
+.BotmLeft p b img{
+    width: .25rem;
+    height: .25rem;
+}

@@ -1,0 +1,12 @@
+.leagueCell{
+    display: flex;
+    width: 100%;
+    position: fixed;
+    top: 2.41rem;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    bottom: 0;
+    z-index: 999;
+    background: #fff;
+}

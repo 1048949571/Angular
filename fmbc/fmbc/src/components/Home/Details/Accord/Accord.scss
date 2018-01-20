@@ -1,0 +1,49 @@
+.Accordlist{
+    background: #fff;
+    width: 100%;
+    margin-bottom: .1rem;
+    height: 1.3rem;
+}
+.whilts{
+    background: #f0f0f0;
+}
+.Accordlist:nth-child(4){
+    height: 2.1rem;
+}
+.Accordlist:nth-child(8){
+    height: 1.7rem;
+}
+.Accordlist:nth-child(10),
+.Accordlist:nth-child(11)
+{
+    height: 2.7rem;
+}
+.Accordlist:last-child{
+    height: 7.5rem;
+}
+.Accordlist .playbox{
+    color: #666;
+    font-size: .14rem;
+    margin-left: .1rem;
+    line-height: .3rem;
+}
+
+.Accdiv{
+    height: .5rem;
+    width: 27%;
+    float: left;
+    border: 1px solid #ccc;
+    border-radius: .1rem;
+    margin-left: 3%;
+    margin-right: 2%;
+    margin-top: .05rem;
+}
+.Accdiv h4{
+    text-align: center;
+    font-size: .12rem;
+}
+.Accdiv p{
+    text-align: center;
+    font-size: .12rem;
+    line-height: .1rem;
+}

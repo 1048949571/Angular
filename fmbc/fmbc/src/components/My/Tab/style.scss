@@ -1,0 +1,104 @@
+*{
+    text-decoration: none;
+    list-style: none;
+}
+body,#app,:global(.divbox){
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.12rem;
+    display: flex;
+    flex-direction: column;
+    background: #f0f0f0;
+ }
+
+:global(.Tab){
+    color: #444;
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+    background: #fff;
+}
+:global(.TAB){
+    height: .51rem;
+    width: 100%;
+}
+:global(.tit-Tab){
+    height: 50px;
+    display: flex;
+}
+:global(.tit-Tab) li{
+    float: left;
+    flex: 1;
+    text-align: center;
+    line-height: 50px;
+}
+:global(.TabBox-Tab){
+    height: 100px;
+    background: greenyellow;
+}
+:global(.activebg){
+    border-bottom: 1px solid #e82c2c;
+    color: #e82c2c;
+}
+:global(.count){
+    display: none;
+}
+:global(.show){
+    display: block;
+}
+:global(.titnav){
+    height: 50px;
+    background: #D41E23;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: .14rem;
+    width: 100%;
+}
+:global(.divli){
+    flex: 1;
+    overflow-y: scroll;
+   width: 100%;
+ 
+}
+:global(.libox){
+    margin-bottom: .1rem;
+    height: 60px;
+    background: #fff;
+}
+:global(.liboxtop){
+    height: .4rem;
+    border-bottom: 1px solid #ccc;
+}
+:global(.liboxbom){
+    height: .6rem;
+    display: flex;
+
+}
+:global(.bomleft){
+    flex: 1;
+    height: .6rem;
+}
+:global(.bomleft) img{
+    width: .4rem;
+    height: .4rem;
+    margin-top: .1rem;
+    margin-left: .1rem;
+}
+:global(.bomcon){
+    flex: 2;
+    height: .6rem;
+}
+:global(.bomcon),:global(.bomright) span{
+    display: block;
+    line-height: .25rem;
+}
+:global(.bomright){
+    flex: 2;
+    height: .6rem;
+}
+:global(.bomright) span{
+    float: right;
+    margin-right: .05rem;
+}

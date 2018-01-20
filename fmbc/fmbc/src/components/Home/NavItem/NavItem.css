@@ -1,0 +1,17 @@
+.navItem{
+    width: 21%;
+    height: .2rem;
+    font-size: .12rem;
+    text-align: center;
+    line-height: .2rem;
+    margin-left: .08rem;
+    border: 1px solid #ccc;
+    float: left;
+    border-radius: .1rem;
+    margin-top: .1rem;
+}
+.navItemActive{
+    background: #ff4747;
+    color: #fff;
+    border: 1px solid #ff4747;
+}

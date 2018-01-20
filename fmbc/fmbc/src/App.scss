@@ -1,0 +1,70 @@
+body,.app,#root{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.16rem;
+    background: #fff;
+    display: -webkit-flex;
+      flex-direction: column;
+   }
+
+  :global(#root){
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.16rem;
+  background: #fff;
+}
+   :global(*){
+    margin: 0 auto;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+  }
+  :global(.heads){
+    height: .4rem;
+    width: 100%;
+    background: #e82c2c;
+    position: fixed;
+    color: #fff;
+    text-align: center;
+    line-height: .4rem;
+    top: 0;
+  }
+ .headt{
+   height: .4rem;
+ }
+  .content{
+    width: 100%;
+    flex: 1;
+    height: 80%;
+    overflow-y: scroll;
+  }
+  :global(.foots){
+    width: 100%;
+    background: #fff;
+    height: .41rem;
+    border-top: 1px solid #ccc;
+   
+  }
+  :global(.foots) :global(ul){
+    height: .41rem;
+    background: #fff;
+    display: flex;
+  }
+  :global(.foots) :global(ul) :global(li){
+    height: .41rem;
+    flex: 1;
+    line-height: .41rem;
+    text-align: center;
+    background: #fff;
+  }
+
+  :global(.foots) :global(ul) :global(li) :global(a){
+    display: block;
+   
+  }
+
+  

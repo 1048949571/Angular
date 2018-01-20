@@ -1,0 +1,23 @@
+.leageBar{
+    height: .5rem;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    color: #444;
+    font-size: .14rem;
+}
+.leageBar .leageright{
+    position: absolute;
+    right: .1rem;
+    top: .1rem;
+}
+.leageLeft{
+    height: .5rem;
+    width: 80%;
+    margin-left: 0;
+    line-height: .5rem;
+    display: flex;
+}
+.leageLeft span{
+    flex: 1;
+    text-align: center;
+}

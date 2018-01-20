@@ -1,0 +1,38 @@
+.imx{
+    width: .5rem;
+    height: .5rem;
+}
+
+.backgrounds{
+    width: 100%;
+    height: 1.3rem;
+   background: url(" https://fmbc.8win.com/img/bg_football.png") no-repeat;
+   background-size: 100% 100%;
+   display: flex;
+}
+.backgrounds div{
+    flex: 1;
+    text-align: center;
+}
+.backgrounds div img{
+    margin-top: .25rem;
+}
+.let p{
+    color: #ccc;
+    font-size: .14rem;
+    line-height: .45rem;
+}
+.con h4{
+    color: #fff;
+    line-height: .3rem;
+}
+.con b{
+     color: #fff;
+     line-height: .3rem;
+     font-size: .14rem;
+}
+.con p{
+   font-size: .12rem;
+    line-height: .3rem;
+    color: #ccc;
+}

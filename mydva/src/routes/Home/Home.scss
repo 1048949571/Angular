@@ -1,0 +1,47 @@
+:global(body),:global(#root){
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    display: -webkit-flex;
+    flex-direction: column;  
+}
+.App{
+ position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: -webkit-flex;
+  flex-direction: column;
+} 
+.heads{
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    background: #de181b;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    line-height: 50px;
+} 
+.const{
+    width: 100%;
+    flex: 1;
+    overflow-y: scroll;
+    
+}
+ .foot{
+    height: 42px;
+    width: 100%;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    display: flex;
+} 
+.foot a{
+    flex: 1;
+    text-align: center;
+    height: 42px;
+    display: inline-block;
+    line-height: 42px;
+    color: #999;
+}
