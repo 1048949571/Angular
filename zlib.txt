@@ -1,0 +1,18 @@
+zlib  负责文件压缩和解压的内置模块
+var zlib=require("zlib")
+
+压缩文件
+zlib.createGzip()--------创建一个压缩流
+解压文件
+zlib.createGunzip()---------创建一个解压流
+
+压缩
+1.创建一个只读数据流
+fs.createReadStream(路径)
+2.创建一个只写数据流
+fs.createWriteStream(路径.zip/gz)
+3.管道流压缩并输出
+var cte=zlib.createGzip();
+rs.pipe(cte).pipe(ws)
+
+解压与压缩相反

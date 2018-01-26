@@ -1,0 +1,58 @@
+http时操作网络的内置模块
+var http=require("http");
+
+1.创建http服务器   http.createServer();
+2.设置响应头  res.writeHead(状态码，obj)
+3.结束响应
+4.监听端口号
+
+http.createServer(funtion(req,res){
+     req==request   请求体
+     res==response  响应体
+   res.writeHead(200,{
+      "Content-Type":"text/html;charset=utf8"，
+      “Content-length”:3//显示字符的长度
+       //text/plain  以纯文本形式解析内容，无法解析html标签和css选择器
+     }）
+     res.end("hello");
+	//结束响应，告诉客户端所有消息已经发送。当所有要返回的内容发送完毕时，该函数必须被调用一次，如果不调用该函数，客户端将永远处于等待状态。
+}）.listen(8080)
+
+http模块提供两种使用方式：
+  1、作为服务端使用时，创建一个HTTP服务器，监听HTTP客户端请求并返回响应
+  2、作为客户端使用时，发起一个HTTP客户端请求，获取服务端响应；
+
+req.url  属性 
+获取端口号后面的路径，如果后面没有路径，默认为“/”
+
+
+
+http作为客户端使用 向服务器发起一个请求
+
+options={
+    hostname: "localhost",-----域名
+    port: 8080,-----端口号
+    path: "/",
+    method: "get",
+    headers:{
+      "Content-Type":"text/html"
+    }
+}
+http.request(options,funtcion(res){
+  response.on("data",function(chunk){
+       
+    })
+
+}).end()
+
+注意：
+为了减少网络传输数量，http传输过程中会采用通用的压缩算法来压缩数据，gzip属于最常用的压缩算法。
+
+   使用node的http模块发送请求时并没有帮我们进行解压，因此我们需要手动去判断gzip。
+
+   我们设置的http头Accept-Encoding为gzip告诉服务器我们支持gzip压缩，服务器收到请求后，返回resonder头中content-encoding带有gzip表明返回的数据为gzip压缩过的内容，node 中可以通过responder.headers["content-encoding"]来判断服务器返回的内容是否gzip压缩过。
+
+
+var https=require("https");
+https  比http安全性更高  需要生成密钥，需要证书
+

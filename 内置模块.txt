@@ -1,0 +1,25 @@
+操作地址栏参数
+--------------------------------------------------------------------
+querystring 模块用于实现URL参数字符串与参数对象的互相转换，以及对参数进行解码/编码
+
+引入
+var querystring=require("querystring);
+1----字符串转对象
+querystring.parse(str)
+2-----对象转字符串
+querystring.stringify(obj,"分隔符","分配符")
+3------字符编码
+querystring.escape(name)
+4------字符解码
+querystring.unescape()
+--------------------------------------------------------------------------
+
+url处理HTTP请求时url模块使用率超高，因为该模块允许解析URL、生成URL，以及拼接URL；
+引入
+var url=requery("url")
+
+1--------字符串转对象
+url.parse(str);
+2--------对象转字符串
+url.format(obj)
+

@@ -1,0 +1,85 @@
+﻿Git
+windows安装
+安装一路next
+
+测试安装
+Cmd命令测试 git –version
+
+
+下载
+git clone url
+
+设置用户名
+git config –global user.name 
+设置邮箱
+git config –gloabal user.email
+
+将文件上传到github
+-----------------------------------------------
+
+1、注册github 账号
+2、创建一个资源库
+your profile -repositories - new 
+3、打开需要上传的路径
+4、初始化 git init
+5、添加文件 git add .  添加所有文件
+6、上传地址 git remote add origin url（github 资源库url 地址）
+https: url
+ssh:  ssh 是github自己的传输协议，速度更快，如果需要用ssh协议，需要将ssh的keygen添加到github
+创建ssh keygen 确定 C盘用户下面有没有 .ssh
+
+打开 git bash - ssh-keygen  一路next 
+
+7、提交文件到缓存区  git commit -m "note"
+8、git push -u origin master
+
+
+查看文件状态
+git status
+
+查看提交版本
+
+git log
+
+
+分支
+为了数据安全，保留版本信息，使用版本控制工具 git
+
+如何创建分支？
+git branch dev
+
+如何切换分支
+git checkout dev|master
+
+如何查看当前分支
+git branch
+
+
+查看分支：git branch
+
+创建分支：git branch <name>
+
+切换分支：git checkout <name>
+
+创建+切换分支：git checkout -b <name>
+
+合并某分支到当前分支：git merge <name>
+
+删除分支：git branch -d <name>
+
+
+合并分支并保留提交新
+git merge --no-ff -m "" dev
+
+创建功能分支
+git checkout -d feature-vulcan
+git add
+git commit
+
+删除
+git branck -d feature-vulcan
+强制删除
+git branck -D feature-vulcan
+
+创建bug 分支
+git checkout -b issue-001

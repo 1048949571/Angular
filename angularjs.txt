@@ -1,0 +1,106 @@
+过滤器
+------------------------------------------------------------------
+大写转换
+{{"aaa" | uppercase}}
+小写转换
+{{"aaa" | lowercase}}
+数字转货币
+{{"1231323" | currency}}
+{{"1231323" | currency: "RMB"}}
+{{"1231323" | currency: "￥"}}
+时间戳转时间
+{{"123213213" | date:"yyyy-MM-dd HH:mm:ss"}}
+截取
+{{"123456789" | limitTO : 5}} 左边截取5个
+{{"123456789" | limitTO : -5}} 右边截取5个
+过滤
+{{[] | filter : {age:"13"}}
+排序
+{{ [] | orderBy : item : true }}
+
+
+
+angularjs 指令
+-------------------------------------------------------------------
+ng-app 申明作用域范围
+ng-controller 申明控制器
+ng-bind   变量      绑定变量
+ng-model  变量      绑定表单数据
+ng-click  方法()    点击事件
+ng-show   布尔值 
+ng-hide 
+ng-if
+ng-repeat
+ng-init
+ng-class 
+
+
+git
+---------------------------------------------------------------------
+分布式版本控制
+
+ssh 需要配置 .ssh 密钥 并上传到github
+https 不需要配置密钥
+
+
+冲突
+
+《《《《《《
+文件1
+-------------------------
+文件2
+》》》》》》》
+
+git init   初始化
+git add .  添加文件到缓存区
+git remote add origin url  添加提交url
+git commit -m "note"  提交文件到缓存区并添加注释
+git push -u origin master  提交到 github 远程仓库
+
+git clone 获取更新
+git pull  更新覆盖本地版本
+git fetch 更新 
+
+git checkout -b dev  创建并切换 dev分支
+
+git branch dev  创建开发环境分支
+git branch issue 创建修改bug分支
+git branch feature  创建修改功能分支
+
+git checkout dev  迁出、切换分支
+
+git branch  查看所有分支
+git branch -d dev  删除分支
+git branch -D dev  强制删除分支
+git log  查看提交log 日志
+git status  查看当前状态
+
+git merge  dev  合并分支 
+git reset  撤销修改
+git config  配置
+
+
+
+gulp
+------------------------------------------------------------------
+
+gulp.task("taskname",function(){
+
+}):
+
+
+gulp.src("./css/*.css");
+gulp.src(["a.css","b.css"]..."n.css");
+
+gulp.pipe();
+gulp.dest("./css");
+
+gulp.watch();
+
+
+mock 数据
+----------------------------------------------------------------------
+
+gulp-connect
+gulp-webserver
+json-server

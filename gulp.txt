@@ -1,0 +1,45 @@
+﻿gulp
+自动化构建工具
+
+压缩css  gulp-minifycss
+压缩js  gulp-uglify
+压缩图片  gulp-image
+压缩页面  gulp-html
+合并  gulp-concat
+重命名 gulp-rename
+注释  gulp-notify
+
+
+mock 模拟数据
+原理：
+将地址栏参数截取，然后拼接路径，读取文件，输出到web服务器上
+客户端通过ajax 访问url 接口 回显数据 
+
+gulp-webserver    来创建一个webservice
+-----------------------------------------
+gulp.task("server",function(){
+	gulp.src('./')
+		,pipe(server({
+			port:8080,
+			host:"localhost",
+			livereload:true,
+			directoryListing:{
+				path:"./data",
+				enable:true
+			},
+			middleware:function(req,res,next){
+			}
+		}));
+});
+
+
+json-server  来创建一个webservice
+---------------------------------------
+
+cd打开路径  json文件的位置
+json-server --watch data.json
+
+
+
+
+

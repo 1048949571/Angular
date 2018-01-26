@@ -1,0 +1,199 @@
+angularjs
+--------------------------------------------------------------
+
+ng-app  申明angular作用域范围 
+angular.module("myWebsite",[]);
+
+
+ng-controller 申明控制器作用域范围
+angular.module("myWebsite").controller("controllerName",function(){});
+
+
+ng-bind 绑定变量
+
+ng-model 给表单元素绑定数据
+$scope.key = value
+
+
+ng-show  显示   接受两个参数  布尔值类型  true|false  true代表显示 false代表隐藏
+ng-hide  隐藏   接受两个参数  布尔值类型  true|false  true代表隐藏 false代表显示
+ng-if 通过布尔值来显示或者隐藏 同 ng-show  但是性能差一些
+
+ng-click  angular绑定事件指令
+
+<div ng-click="functionName()"></div>
+$scope.functionName = function(){
+
+}
+
+ng-class  绑定一个class 类名
+<span ng-class="className"><span>
+$scope.className = class;
+<style type="text/css">
+	.class{
+}
+</style>
+
+
+ng-repeat 循环一个对象或者一个数组  语法类似于  for in 
+<span ng-repeat="item in items"><span>
+
+
+ng-init  初始化一个变量
+<span ng-init="key=value"><span>
+
+
+angularjs - 过滤器
+------------------------------------------------------------------------------
+
+将数字转换成货币
+{{"123456789" | currency}}  
+{{"123456789" | currency : "￥"}}  
+{{"123456789" | currency : "€"}} 
+
+
+将小写字母转换成大写
+{{"haojiubujian" | uppercase}}
+
+将大写字母转换成小写
+{{"HAOJIUBUJIAN" | lowercase}}
+
+
+筛选
+{{[] | filter:{ key:value }}}
+
+排序
+{{[] | orderBy}}
+
+<span ng-repeat="item in items | orderBy: item: true|false }}"><span>
+
+截取
+{{"123456789" | limitTO : 5}}  从左向右截取五个字符     //12345
+{{"123456789" | limitTO : -5}}  从右向左截取五个字符    //56789
+
+日期对象
+{{Date | date : "yyyy-MM-dd HH:mm:ss"}}
+{{Date | date : "HH:mm:ss"}}
+{{Date | date : "yyyy-MM-dd"}}
+
+
+
+GIT&GITHUB
+--------------------------------------------------------------------------
+
+//初始化
+git init
+//添加文件到缓存区
+git add filename | git add . 
+//添加提交github 地址
+git remote add origin url
+//提交文件到缓存区
+git commit -m "note"
+//将缓存区文件上传到github
+git push -u origin master 
+
+//查看分支
+git branch
+
+//创建dev 分支
+git branch dev
+//创建 bug 分支
+git branch issue
+//创建功能分支
+git branch feature
+
+git checkout -b dev
+git checkout -b issue
+git checkout -b feature
+
+git checkout dev
+git checkout issue
+git checkout feature
+
+git merge dev
+git merge issue
+git merge feature
+
+git branch -d dev
+git branch -D dev
+
+git status
+git log
+git reset
+
+
+git clone url
+git pull 
+git fetch
+
+
+gulp
+----------------------------------------------------------------------
+
+//创建任务
+gulp.task();
+
+//遍历目录文件
+gulp.src()
+
+//输出目录
+gulp.dest();
+
+//监听
+gulp.watch()
+
+gulp.pipe();
+
+--------------------------------------------------------------------------
+gulp-webserver
+json-server
+
+
+var fs  = require('fs');
+var url  = require('url');
+var path  = require('path');
+
+var gulp= require('gulp');
+var webserver= require('gulp-webserver');
+
+gulp.task("webserver",function(){
+	gulp.src('./')
+		.pipe(webserver({
+			port:8090,
+			host:"localhost|127.0.0.1",
+			livereload:true,
+			directoryListing:{
+				path:"./",
+				enable:true
+			},
+			open:true,
+			middleware:function(req,res,next){
+			
+				var urlObj = url.parse(req.url);
+				var query = urlObj.query;
+				var url = path.join(__dirname,query+".json");
+				
+				fs.exists(url,function(exist){
+					if(!exist) return new Erroe("can not find"+query+".json");
+					fs.readFile(url,function(err,data){
+						if(err) return console.error(err);
+						
+						var data = {
+							isSuccess:true,
+							errMsg:"",
+							errCode:0,
+							data: JSON.stringify(data);
+						}
+						res.writeHead(200,{
+							'Content-Type':'text/json;charset=utf8',
+							'Access-Control-Allow-Origin':'http://locahost:8090'
+						});
+						res.end(data);
+					});
+				);
+				
+				
+			}
+		}));
+});
+
