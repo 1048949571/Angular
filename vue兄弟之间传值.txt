@@ -1,0 +1,54 @@
+<template>
+      <div class="components-a">
+           <button @click="abtn">A按钮</button>
+      </div>
+</template>
+<script>
+import eventVue from '../../js/event.js'
+export default {
+      name: 'app',
+      data () {
+        return {
+                ‘msg':"我是组件A"
+        }
+      },
+      methods:{
+           abtn:function(){
+                   eventVue .$emit("myFun",this.msg)   //$emit这个方法会触发一个事件
+           }
+      }
+}
+</script>
+
+
+
+
+
+
+
+<template>
+     <div class="components-a">
+         <div>{{btext}}</div>
+     </div>
+</template>
+<script>
+import eventVue from '../../js/event.js'
+export default {
+   name: 'app',
+   data () {
+        return {
+           'btext':"我是B组件内容"
+        }
+   },
+   created:function(){
+       this.bbtn();
+   },
+   methods:{
+       bbtn:function(){
+            eventVue .$on("myFun",(message)=>{   //这里最好用箭头函数，不然this指向有问题
+                 this.btext = message      
+            })
+       }
+    }
+}
+</script>
