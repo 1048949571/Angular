@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    
+	<title>支付测试</title>
+	
+    <link rel="stylesheet" type="text/css" href="../styles/pinus.css">
+</head>
+<body>
+<header>
+    <div class="h_content">
+        <span></span>
+    </div>
+</header>
+<section class="block">
+    <div class="content2">
+        <div class="app">
+            <span class="iphone"><img src="../img/bgpic.jpg" width="100%" height="auto"></span>
+            <label class="text_amount">
+                <input id="amount" type="text" placeholder="金 额"/>
+            </label>
+
+            <div class="ch">
+                <span class="up" onclick="wap_pay('upacp_wap')">银联 WAP</span>
+                <span class="up" onclick="wap_pay('alipay_wap')">支付宝 WAP</span>
+                <span class="up" onclick="wap_pay('bfb_wap')">百度钱包 WAP</span>
+                <span class="up" onclick="wap_pay('jdpay_wap')">京东支付 WAP</span>
+                <span class="up" onclick="wap_pay('yeepay_wap')">易宝支付 WAP</span>
+                <span class="up" onclick="wap_pay('wx_pub')">微信浏览器内公众号支付 WAP</span>
+
+            </div>
+        </div>
+    </div>
+</section>
+<script src="../../dist/pingpp.js" type="text/javascript"></script>
+<script>
+
+     function wap_pay(channel) {
+
+		var url = "http://test.ws.tb360.org/createCharge";
+		if(url.length == 0 || !url.startsWith("http")){
+			alert("请填写正确的URL11");
+			return;
+		}
+		var amount = document.getElementById("amount").value*100; //获取充值金额
+
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", url, true);
+		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded;application/json;charset=UTF-8");
+		xhr.send("channel="+channel+"&amount="+amount+"&order_no=1513144710834s2cvbghddd3pmj5dt3&open_id=onJ5owOJGOPPpXat4vZbBjrHrKeI");          
+		xhr.onreadystatechange = function () {
+							
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				try{
+					console.log("xhr.responseText===="+xhr.responseText);
+					var charge = JSON.parse(xhr.responseText);
+					pingpp.createPayment(charge, function(result, err) {
+						if (result == "success") {
+							// 只有微信公众账号 wx_pub 支付成功的结果会在这里返回，其他的支付结果都会跳转到 extra 中对应的 URL(后端处理)。
+						} else if (result == "fail") {
+						  // charge 不正确或者微信公众账号支付失败时会在此处返回
+						  //支付失败会跳转到支付失败页面
+							window.location.href = "fail.html";
+						} else if (result == "cancel") {
+						  // 微信公众账号支付取消支付
+						  //取消支付同样跳转到支付失败页面
+						   window.location.href = "fail.html";
+						}
+					});
+				}catch(err){
+					alert("系统错误！");
+				}
+				
+		   }
+	   }
+    }
+</script>
+</body>
+</html>

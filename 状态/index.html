@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <status :state="state"></status>
+        <div @click="changeStates">下一页</div>
+        </div>
+    </div>
+</body>
+<script src="./vue.js"></script>
+</html>
+<script>
+
+
+    const state1={
+        template:`<div>页面1</div>` // 虚拟dom 1.0
+    }
+    const state2={
+        template:`<div>页面2</div>`
+    }
+    const state3={
+        template:`<div>页面3</div>`
+    }
+    const state4={
+        template:`<div>页面4</div>`
+    }
+    const states = {
+        '0':state1,
+        '1':state2,
+        '2':state3,
+        '3':state4
+    }
+
+    Vue.component('status',{
+        props:['state'],
+        computed:{
+            ViewComponent(){
+                return states[this.state] 
+            }
+        },
+        render(h){
+            return h(this.ViewComponent);
+        }
+    })
+
+
+    new Vue({
+        el:'#app',
+        data(){
+            return {
+                msg:'Hello',
+                state:0
+            }
+        },
+        methods:{
+            changeStates(){
+                this.state = ++this.state%4; // 你有几页就写几
+            }
+        }
+    })
+</script>
