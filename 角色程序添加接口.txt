@@ -1,0 +1,162 @@
+******************************
+查询角色&程序列表
+******************************
+uri:   GET /web/rolemanage/
+参数：
+roleName：角色&程序名称
+productlineId：产品线id
+productlineCode：产品线code
+acsRoleCode：acs角色code
+appToken：程序apptoken
+roleType：角色类型，1为普通角色 2为程序角色
+
+参数例子：
+/web/rolemanage/?roleName=test1111&roleType=2
+
+可排序的字段：
+
+返回示例:
+{
+  "status": 0,
+  "statusInfo": "success",
+  "data": {
+    "id": 1,
+    "productlineId": 37,
+    "productlineCode": "ssg_rigel_cdc",
+    "acsRoleId": 200933,
+    "roleName": "test1",
+    "acsRoleCode": "test1_code",
+    "lastModify": "2016-09-30 16:28:00",
+    "createTime": "2016-09-30 16:27:59",
+    "roleType": 1,
+    "appToken": 3453453984598345j34jk3hjk,
+    "changeLog": {
+      "id": 1,
+      "productlineId": 37,
+      "productlineCode": "ssg_rigel_cdc",
+      "acsRoleId": 200933,
+      "roleName": "test1",
+      "acsRoleCode": "test1_code",
+      "lastModify": "2016-09-30 16:28:00",
+      "createTime": "2016-09-30 16:27:59",
+      "roleType": 1
+    }
+  }
+}
+
+
+******************************
+通过角色id获取角色&程序信息
+******************************
+uri:   GET /web/rolemanage/{id}
+
+参数：
+url中的参数 id： 代表角色id即 “查询角色&程序列表”接口中的id信息。
+参数示例:
+GET /web/role/1
+
+返回示例:
+{
+  "status": 0,
+  "statusInfo": "success",
+  "data": {
+    "id": 9,
+    "productlineId": 37,
+    "productlineCode": "ssg_rigel_cdc",
+    "acsRoleId": 200943,
+    "roleName": "test1111ww2111222",
+    "acsRoleCode": "test1_code123123_app_1",
+    "lastModify": "2016-10-09 11:37:18",
+    "createTime": "2016-10-09 11:37:18",
+    "roleType": 1,
+    "appToken": "",
+    "changeLog": {
+      "id": 9,
+      "productlineId": 37,
+      "productlineCode": "ssg_rigel_cdc",
+      "acsRoleId": 200943,
+      "roleName": "test1111ww2111222",
+      "acsRoleCode": "test1_code123123_app_1",
+      "lastModify": "2016-10-09 11:37:18",
+      "createTime": "2016-10-09 11:37:18",
+      "roleType": 1,
+      "appToken": ""
+    }
+  }
+}
+
+
+******************************
+添加角色&程序
+******************************
+uri:   POST /web/rolemanage/
+
+参数：
+roleName：角色&程序名称
+productlineId：产品线id
+productlineCode：产品线code
+
+acsRoleCode：acs角色code,当roletype为1是必须传入
+
+roleType：角色类型，1为普通角色 2为程序角色
+
+roleType=1参数示例:
+{
+	"roleName":"test1", 
+	"productlineId":37, 
+	"productlineCode":"ssg_rigel_cdc1", 
+	"acsRoleCode":"test1_code",
+	"roleType":1
+}
+
+roleType=2参数示例:
+{
+	"roleName":"程序aaa", 
+	"productlineId":37, 
+	"productlineCode":"ssg_rigel_cdc1", 
+	"roleType":2
+}
+返回示例:
+{
+  "status": 0,
+  "statusInfo": "success",
+  "data": ""
+}
+
+******************************
+修改角色&程序
+******************************
+uri:   POST /web/rolemanage/
+
+参数：
+id: 角色&程序id
+roleName：角色&程序名称
+
+参数示例:
+{
+    "id":1
+	"roleName":"test1",
+}
+返回示例:
+{
+  "status": 0,
+  "statusInfo": "success",
+  "data": ""
+}
+
+
+******************************
+删除角色&程序
+******************************
+uri:   DELETE /web/rolemanage/
+
+参数：
+id：角色&程序id
+
+返回示例:
+{
+  "status": 0,
+  "statusInfo": "success",
+  "data": ""
+}
+
