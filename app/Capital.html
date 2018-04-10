@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN”　”http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en" class="csstransitions cssanimations o2_gecko o2_firefox o2_59 o2_mini">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" />
+    <title>资金端</title>
+    <link rel="stylesheet" href="css/Merchant.css">
+    <link rel="shortcut icon" href="imgs/headLoging.png">
+</head>
+
+<body>
+    <div class="Apply">
+        <form class="ApplyBox" action="">
+            <p class="Apply_unp">
+                <img src="imgs/unp.png" alt="" class="unpBTN">
+            </p>
+            <p class="Apply_p">
+                <span>
+                    <b>*</b>商户名称:</span>
+                <input type="text"  class="SHname" placeholder="与营业执照名称一致，30个字以内">
+                <span class="Apply_pA">
+                    <img src="imgs/errorIMG.png" alt="" class="Apply_pI">请输入商户名称</span>
+                <img src="imgs/succeIMG.png" alt="" class="succeImg">
+            </p>
+            <div class="Apply_sele">
+                <span>
+                    <b>* </b>商户所在地:</span>
+
+                <div class="zcityGroup" city-range="{'level_start':1,'level_end':3}"></div>
+
+            </div>
+            <p class="Apply_p">
+                <span>
+                    <b>*</b>详细地址:</span>
+                <input type="text"  class="SHdz" placeholder="30个字以内">
+                <span class="Apply_pA">
+                    <img src="imgs/errorIMG.png" alt="" class="Apply_pI">请输入详细地址</span>
+                <img src="imgs/succeIMG.png" alt="" class="succeImg">
+            </p>
+            <p class="Apply_pp">
+                <span>
+                    <b>*</b>经营范围:</span>
+                <span>
+                    <input type="radio" name="sexx" id="femalex">
+                    <span class="femalex-custom">●</span>
+                    <label for="femalex" class="femalex">教育</label>
+                </span>
+                <span>
+                    <input type="radio" name="sexx" id="malex">
+                    <span class="malex-custom">●</span>
+                    <label for="malex" class="malex">租房</label>
+                </span>
+                <p class="Apply_ppp">
+                    <span style="margin-right: 10px;">
+                        <b>*</b>商户介绍:</span>
+                    <textarea name="" id="textArea" cols="44" rows="8" onkeyup="cal()" placeholder="2000字以内"></textarea>
+                    <span id="count">
+                        <input disabled value="2000" class="countInput">
+                        <input disabled value="/2000">
+                    </span>
+                    <span class="Apply_pA">
+                        <img src="imgs/errorIMG.png" alt="" class="Apply_pI">请输入商户介绍</span>
+
+                </p>
+                <p class="Apply_pnam">
+                    <span>
+                        <b>*</b> 联系人: </span>
+                    <input type="text"  class="SHRen" placeholder="6个汉字以内">
+                    <span class="Apply_pA">
+                        <img src="imgs/errorIMG.png" alt="" class="Apply_pI">请输入联系人</span>
+                    <img src="imgs/succeIMG.png" alt="" class="succeImg">
+                </p>
+                <p class="Apply_ppon">
+                    <span>
+                        <b>*</b>联系人电话:</span>
+                    <input type="text"  class="SHRenpon" placeholder="11位手机号">
+                    <span class="Apply_pA">
+                        <img src="imgs/errorIMG.png" alt="" class="Apply_pI"> 请输入联系人电话</span>
+                    <img src="imgs/succeIMG.png" alt="" class="succeImg">
+                </p>
+                <p class="Apply_btn">
+                    <button id="Apply_btn">提交</button>
+                </p>
+        </form>
+    </div>
+    <header class="Header">
+        <div class="MerchLeft">
+            <span class="MerchLeftImg">
+                <img src="imgs/headLoging.png" alt="">
+            </span>
+            <span class="MerchLeft_r">
+                <a href="https://hdfex.com/" target="_blank">分付君</a>
+
+                <b></b>
+            </span>
+
+            <span>开放平台</span>
+            <span>资金端</span>
+        </div>
+        <div class="MerchRight">
+            <span>
+                <a href="Guidance.html" target="_blank">接入指引</a>
+            </span>
+
+            <b></b>
+            <span class="KFpone">客服电话
+                <span class="KFponeSp">
+                    <p>电话：400 6032 198</p>
+                    <p>周一至周五 09:00-18:00</p>
+                </span>
+            </span>
+
+        </div>
+    </header>
+    <div class="MerchBOX">
+            <div class="MerchBOXs">
+        <div class="Merch_H1">
+            <p>为您赋能 携手共赢</p>
+        </div>
+        <div class="Merch_DL">
+            <form action="" id="search">
+                <header>登录</header>
+                <p class="searP">
+                    <img src="imgs/ZH.png" alt="">
+                    <input type="text" placeholder="账号">
+                </p>
+                <p class="searP">
+                    <img src="imgs/MM.png" alt="">
+                    <input type="password" placeholder="密码">
+                </p>
+                <div class="bar3 TUDONG" style="position: relative;">
+                    <div class="slide-to-unlock-bg" style="text-align: centent;">
+                    </div>
+                    <div class="slide-to-unlock-progress">
+                    </div>
+                    <div class="slide-to-unlock-handle">
+                    </div>
+                </div>
+                <div class="female">
+                    <input type="checkbox" name="sex" id="female">
+                    <span class="female-custom">
+                        <img src="imgs/D.png" alt="">
+                    </span>
+                    <label for="female">记住账号</label>
+                </div>
+                <p class="DLBtn">
+                    <!-- <button>登录</button> -->
+                    <input type="submit" value="登录">
+                </p>
+                <p class="ZC_A">
+                    <a>免费申请</a>
+                </p>
+            </form>
+        </div>
+        </div>
+    </div>
+    <div class="MerchUll">
+        <div class="MerchLi_one">
+            <dl>
+                <dt>
+                    <img src="imgs/capital_1.png" alt="">
+                </dt>
+                <dd>商户数量</dd>
+            </dl>
+            <dl>
+                <dt>
+                    <img src="imgs/capital_2.png" alt="">
+                </dt>
+                <dd>往期表现</dd>
+            </dl>
+            <dl>
+                <dt>
+                    <img src="imgs/capital_3.png" alt="">
+                </dt>
+                <dd>交易规模 20亿</dd>
+            </dl>
+        </div>
+
+    </div>
+    <div class="Guarantee">
+        <p>我们的优势</p>
+        <div class="GuarUl">
+            <dl>
+                <dt>
+                    <img src="imgs/capital_4.png" alt="">
+                </dt>
+                <dd>完善业务流程</dd>
+            </dl>
+            <dl>
+                <dt>
+                    <img src="imgs/capital_5.png" alt="">
+                </dt>
+                <dd>成熟风控模式</dd>
+            </dl>
+            <dl>
+                <dt>
+                    <img src="imgs/capital_6.png" alt="">
+                </dt>
+                <dd>交易数据透明</dd>
+            </dl>
+            <dl>
+                <dt>
+                    <img src="imgs/capital_7.png" alt="">
+                </dt>
+                <dd>渠道多维度管理</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="contactBox">
+        <div class="footTop">
+            <div class="Footleft">
+                <p>
+                    联系电话：400 6032 198 （周一至周五9:00-18:00）</p>
+                <p>
+                    公司地址：北京市朝阳区利泽中二路 101 号启明国际大厦</p>
+            </div>
+            <div class="Footright">
+                <dl>
+                    <dt>
+                        <img src="img/FFJAPP.gif" alt="">
+                    </dt>
+                    <dd>分付君 App 下载</dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <img src="img/FFJWX.png" alt="">
+                    </dt>
+                    <dd>分付君微信公众号</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="footBottom">
+            <p>@北京贷鱼科技有限公司 京 ICP 备 17039104 号 -1</p>
+
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src='js/unlock.js'></script>
+<script src="js/Merchant.js"></script>
+<script src="js/zcity.js"></script>
+<script type="text/javascript">
+    zcityrun('.zcityGroup');
+</script>

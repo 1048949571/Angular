@@ -1,0 +1,215 @@
+* { 
+    padding: 0px; 
+    margin: 0px; 
+    text-decoration: none; 
+    list-style: none;
+
+} 
+html,body{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-family:"Microsoft YaHei";
+}
+.Header{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+}
+.Header div{
+    -webkit-flex:1;
+    -moz-flex:1;
+    flex: 1;
+}
+.MerchLeft{
+    text-align: center;
+    padding: 20px;
+}
+.MerchLeftImg{
+    position: relative;
+    margin-left: 20px;
+}
+.MerchLeft span:nth-child(2){
+    margin-left: 60px;
+}
+.MerchLeftImg img{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.MerchLeft span{
+    display: inline-block;
+    float: left;
+    line-height: 40px;
+    width: 15%;
+}
+.MerchLeft_r b{
+    display: inline-block;
+    height: 15px;
+    margin-left: 20px;
+    border-right: 1px solid #ccc;
+}
+.MerchLeft_r a{
+    color: #000;
+}
+.MerchRight{
+    padding: 10px 50px 10px 10px;
+    text-align: right;
+    
+}
+.MerchRight span{
+    display: inline-block;
+    padding: 10px;
+    line-height: 40px;
+    margin-right: 20px;
+    color: #000;
+}
+.MerchRight b{
+    display: inline-block;
+    height: 15px;
+    margin-right: 20px;
+    border-right: 1px solid #ccc;
+}
+.MerchRight span a{
+    color: #000;
+}
+.KFpone{
+    position: relative;
+}
+.KFponeSp{
+    top: 70px;
+    right: 0;
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    z-index: 9;
+}
+.KFponeSp p{
+    display: block;
+    width: 150px;
+    text-align: center;
+}
+.KFponeSp p:nth-child(1){
+    font-size: 14px;
+}
+.KFponeSp p:nth-child(2){
+    font-size: 12px;
+    color: #a1a1a1;
+}
+
+
+
+
+.contact{
+    width: 100%;
+    height: 100%;
+}
+.contactHead{
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+    font-size: 30px;
+    color: #333;
+    color:#fff;
+}
+.contactImg{
+    background: url("../img/tactIMG.gif") no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 60%;
+}
+.OPBOX{
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+.contactBox{
+    width: 100%;
+    height: 40%;
+    background: url("../img/tactBottom.png") no-repeat;
+    background-size: 100% 100%;
+}
+.contactUL{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    padding: 20px 40px;
+}
+.contactUL dl{
+    float: left;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    flex: 1;
+    text-align: center;
+}
+.contactUL dd{
+    color: #fff;
+    padding: 35px 5px;
+    font-size: 16px;
+}
+.Contactimt>img{
+    width: 60px;
+    height: 60px;
+}
+.ContactIm img{
+    margin-top: 20%;
+    width: 37px;
+    height: 20px;
+}
+
+.footTop{
+    width: 80%;
+    height: 80%;
+    border-bottom: 1px solid #535353;
+    margin-left: 10%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+}
+.Footleft{
+    -webkit-flex: 1;
+    -moz-flex:1;
+    flex: 1;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+}
+.Footleft p{
+    margin-top: 10px;
+    padding: 20px 20px 10px 20px;
+    position: relative;
+}
+.Footleft p img{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+.Footright{
+    -webkit-flex: 1;
+    -moz-flex:1;
+    flex: 1;
+    text-align: center;
+    margin-top: 20px;
+}
+.Footright dl{
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+}
+.Footright dl dd{
+    color: #fff;
+    font-size: 12px;
+    padding: 10px;
+    text-align: center;
+}
+.footBottom{
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    font-size: 10px;
+    line-height: 36px;
+    position: relative;
+}
+.footBottom p{
+    color: #fff;
+}

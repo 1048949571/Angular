@@ -1,0 +1,806 @@
+* { 
+    padding: 0px; 
+    margin: 0px; 
+    text-decoration: none; 
+    list-style: none;
+
+} 
+html,body{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-family:"Microsoft YaHei";
+}
+.Apply{
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 200%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 20;
+}
+.ApplyBox{
+    width: 60%;
+    height: auto;
+    background: #fff;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-left: 20%;
+}
+.currentValue{
+    font-size: 10px;
+}
+table td{vertical-align:middle;border:none;}
+.td-04{width:40%;background: red;}
+
+ th{padding:10px;text-align:left;}
+ td{padding:10px;}
+/* .Apply_sele{
+    margin-left: 80px;
+} */
+ .Apply_sele span{
+    display: inline-block;
+    float: left;
+    margin-left: 175px;
+ }
+ .Apply_sele span b{
+     color: red;
+ }
+ 
+/****************************************
+* name:zcity
+* tips:城市选择
+****************************************/
+
+.zcityGroup:after{display:block;height:0;line-height:0;clear:both;visibility:hidden;content:'\0020';}
+.zcityGroup .zcityItem{position:relative;z-index:30;float:left;width:100px;margin-left: 22px;margin-right: -8px;}
+.zcityGroup .zcityItem-head:nth-child(1){border-right:none;}
+.zcityGroup .zcityItem .zcityItem-head{border:1px solid #eee;border-radius:3px;position:relative;z-index:0;padding:0 25px 0 5px;background:#fff;}
+.zcityGroup .zcityItem .zcityItem-head:before{content:'';display:block;width:6px;height:6px;top:50%;margin-top:-3px;position:absolute;z-index:30;right:5px;background:url(../img/ico-triangle-down.png) right center no-repeat;transition:all 0.3s;-moz-transition:all 0.3s;-webkit-transition:all 0.3s;-o-transition:all 0.3s;}
+.zcityGroup .zcityItem .zcityItem-head .currentValue{width:100%;display:block;height:30px;line-height:30px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;border:none;background:#fff;padding:0;font-size: 12px;}
+.zcityGroup .zcityItem .zcityItem-main{position:absolute; z-index:30;left:0px;top:0px;width:100px;visibility:hidden;background:#fff;}
+.zcityGroup .zcityItem .zcityItem-main .cityContainer{height:120px;overflow-x:hidden;overflow-y:auto;border:1px solid #eee;}
+.zcityGroup .zcityItem .zcityItem-main .cityTips,
+.zcityGroup .zcityItem .zcityItem-main .citylist .cityitem{padding:0 10px;display:block;height:32px;line-height:32px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-align:left;}
+.zcityGroup .zcityItem .zcityItem-main .cityTips:hover,
+.zcityGroup .zcityItem .zcityItem-main .citylist .cityitem:hover{background:#f5f5f5;}
+.zcityGroup .zcityItem.on .zcityItem-main{visibility:visible;opacity:1;}
+.zcityGroup .zcityItem.on .zcityItem-head:before{transform:rotate(180deg);-ms-transform:rotate(180deg);-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);-o-transform:rotate(180deg);}
+
+/* //教育 */
+#Apply_pp p{
+    display: inline-block;
+    width: auto;
+    height: auto;
+    background: red;
+}
+#Apply_pp .females,.femalex{
+    display: block;
+    height: 40px;
+    width: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    left: 42%;
+    top: 30px;
+    font-size: 14px;
+    color: #666;
+}
+.femalex-custom{
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    left: 14%;
+    margin: auto;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 12px;
+}
+#Apply_pp #females,#femalex {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    margin: auto;
+    /* 这里及以上的定位，可以让该元素竖直居中。(top: 0; bottom: 0;) */
+    opacity: 0;
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#Apply_pp .females-custom{
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    left: 37%;
+    margin: auto;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 12px;
+}
+.female-custom img{
+    margin-top: 3px;
+}
+#Apply_pp .females-custom.active,.femalex-custom.active {
+    display: block;
+    padding: -5px;
+}
+
+/* 租房 */
+#Apply_pp .males,.malex {
+    display: block;
+    height: 40px;
+    width: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    left: 55%;
+    top: 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+#Apply_pp #males,#malex{
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 80px;
+    margin: auto;
+    /* 这里及以上的定位，可以让该元素竖直居中。(top: 0; bottom: 0;) */
+    opacity: 0;
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#Apply_pp .males-custom{
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    left: 50%;
+    margin: auto;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 12px;
+}
+.malex-custom{
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    left: 27%;
+    margin: auto;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 12px;
+}
+#Apply_pp .males-custom.active,.malex-custom.active {
+    color:#000;
+    padding: -5px;
+}
+.ApplyBox p{
+    padding: 25px 0;
+    width: 100%;
+    position: relative;
+    
+}
+.ApplyBox p .Apply_pA{
+    left: 50%;
+    bottom: 4px;
+    margin-left: -50px;
+    position: absolute;
+    font-size: 14px;
+    color: red;
+}
+.Apply_pI{
+    left: 50%;
+    bottom: 2px;
+    margin-left: -70px;
+    position: absolute;
+}
+.succeImg{
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.ApplyBox .Apply_p{
+    text-align: center;
+}
+.ApplyBox .Apply_unp img{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.ApplyBox p span b{
+    color: red;
+    margin-right: 5px;
+}
+.ApplyBox .Apply_p span{
+    margin-right: 20px;
+}
+.ApplyBox .Apply_p input{
+    width: 40%;
+    height: 40px;
+    border: none;
+    border: 1px solid #e8e8e8;
+    padding: 0 5px;
+}
+.ApplyBox .Apply_pp,.Apply_ppp{
+    text-align: left;
+    
+}
+.ApplyBox .Apply_pp span{
+    margin-left: 188px;
+    margin-right: 17px;
+}
+
+.Apply_ppp span{
+    margin-left: 188px;
+}
+.ApplyBox .Apply_pp input{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.ApplyBox .Apply_ppp{
+    position: relative;
+    padding: 70px 0;
+    width: 100%;
+}
+
+#textArea{
+    top: 0;
+    left: 50%;
+    border: none;
+    border: 1px solid #e8e8e8;
+    margin-left: -110px;
+    position: absolute;
+    padding: 5px;
+    
+    color: #989898;
+}
+#count{
+    position: absolute;
+    right: 200px;
+    color: #989898;
+    font-size: 14px;
+    bottom: 35px;
+}
+#count input{
+    border: none;
+    background: #fff;
+    color: #989898;
+    font-size: 15px;
+    width: 37px;
+}
+.Apply_pnam,.Apply_ppon{
+    text-align: center;
+}
+.ApplyBox .Apply_pnam span{
+    margin-left: 10px;
+}
+.Apply_ppon span{
+    margin-left: -18px;
+    margin-right: 0px;
+}
+.ApplyBox .Apply_pnam input{
+    width: 40%;
+    height: 40px;
+    border: none;
+    border: 1px solid #e8e8e8;
+    padding: 0 5px;
+    margin-left: 19px;
+}
+.ApplyBox .Apply_ppon input{
+    width: 40%;
+    height: 40px;
+    border: none;
+    border: 1px solid #e8e8e8;
+    padding: 0 5px;
+    margin-left: 22px;
+}
+
+.Apply_btn{
+    outline:none;
+    cursor:hand;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+}
+#Apply_btn{
+    border: none;
+    background:#0d79ff; 
+    padding: 10px 40px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+
+
+.Header{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+}
+.Header div{
+    -webkit-flex:1;
+    -moz-flex:1;
+    flex: 1;
+}
+.MerchLeft{
+    text-align: center;
+    padding: 20px;
+}
+.MerchLeftImg{
+    position: relative;
+    margin-left: 20px;
+}
+.MerchLeft span:nth-child(2){
+    margin-left: 60px;
+}
+.MerchLeftImg img{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.MerchLeft span{
+    display: inline-block;
+    float: left;
+    line-height: 40px;
+    width: 15%;
+}
+.MerchLeft_r b{
+    display: inline-block;
+    height: 15px;
+    margin-left: 20px;
+    border-right: 1px solid #ccc;
+}
+.MerchLeft span a{
+
+    color: #000;
+}
+.MerchRight{
+    padding: 10px 50px 10px 10px;
+    text-align: right;
+    
+}
+.MerchRight span{
+    display: inline-block;
+    padding: 10px;
+    line-height: 40px;
+    margin-right: 20px;
+    color: #000;
+}
+.MerchRight b{
+    display: inline-block;
+    height: 15px;
+    margin-right: 20px;
+    border-right: 1px solid #ccc;
+}
+.MerchRight span a{
+    color: #000;
+}
+.KFpone{
+    position: relative;
+}
+.KFponeSp{
+    display: none;
+    top: 70px;
+    right: 0;
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    z-index: 9;
+}
+.KFponeSp p{
+    display: block;
+    width: 150px;
+    text-align: center;
+}
+.KFponeSp p:nth-child(1){
+    font-size: 14px;
+}
+.KFponeSp p:nth-child(2){
+    font-size: 12px;
+    color: #a1a1a1;
+}
+
+.MerchBOX{
+    background: url("../imgs/MerchBackImg.png") no-repeat;
+    background-size: 100% 100%;
+    height: 70%;
+   
+    position: relative;
+}
+.MerchBOXs{
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    bottom: 0;
+}
+.Merch_H1{
+    -webkit-flex:1;
+    -moz-flex:1;
+    flex: 1;
+    text-align: center;
+    color: #fff;
+    font-size: 34px;
+}
+.Merch_H1 p{
+    margin-top: 25%;
+}
+.Merch_DL{
+    -webkit-flex:1;
+    -moz-flex:1;
+    flex: 1;
+    text-align: center;
+}
+#search{
+    background: rgba(250, 250, 250, 0.7);
+    width: 50%;
+    height: 80%;
+    margin-top: 5%;
+    margin-left: 25%;
+}
+#search header{
+    width: 100%;
+    padding: 10px;
+    color: dodgerblue;
+}
+#search .searP{
+    width: 90%;
+    padding: 5px;
+    margin-left: 4%;
+    background: #fff;
+    display: block;
+    margin-top: 10px;
+    position: relative;
+}
+#search .searP img{
+    position: absolute;
+    left: 7px;
+    top: 8px;
+}
+#search .searP input{
+    width: 80%;
+    padding: 8px;
+    margin-left: 10px;
+    border: none;
+    box-shadow: none;
+    outline:none;
+   
+}
+.TUDONG{
+    width: 90%;
+    padding: 5px;
+    margin-left: 4%;
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+    color: #666;
+    font-size: 12px;
+}
+.slide-to-unlock-bg{
+    width: 100%; 
+    height: 40px; 
+    background-color: rgb(232, 232, 232);
+    border-radius: 40px;
+    text-align: center;
+}
+.slide-to-unlock-bg span{
+    line-height: 38px;
+    font-size: 10.8571px; 
+    color: #666;
+    display: inline-block;
+ }
+.slide-to-unlock-progress{
+    position: absolute;
+    border-radius: 40px;
+    left: 6px;
+    top: 6px;
+    background-color: rgb(255, 233, 127); 
+    height: 20px;
+}
+.slide-to-unlock-progress .succText{
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    margin-left: -25px;
+    color: #fff;
+}
+.slide-to-unlock-handle {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 6;
+    cursor: move;
+    background:url('../imgs/btn.png') no-repeat;
+    background-size: 100% 100%; 
+    height: 50px; 
+    width: 50px;
+    border-radius: 50%;
+}
+.searPBtn{
+    width: 90%;
+    padding: 5px;
+    margin-left: 4%;
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+    color: #666;
+    font-size: 12px;
+}
+.searPBtn input{
+    background: red;
+}
+.female{
+    position: relative;
+    width: 90%;
+    padding: 5px;
+    margin-left: 4%;
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+    color: #666;
+    font-size: 12px;
+}
+.female label {
+    display: block;
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    left: 15%;
+    top: 3px;
+    font-size: 14px;
+}
+
+.female input {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    margin: auto;
+    /* 这里及以上的定位，可以让该元素竖直居中。(top: 0; bottom: 0;) */
+    opacity: 0;
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.female span {
+    position: absolute;
+    top: 15px;
+    bottom: 0;
+    left: 20px;
+    margin: auto;
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 12px;
+}
+
+.female span.active {
+    color:#000;
+    padding: -5px;
+}
+.DLBtn{
+    width: 92%;
+    padding: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: block;
+    margin-top: 10px;
+}
+.DLBtn input{
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    background: #0d79ff;
+    color: #fff;
+    font-size: 16px;
+}
+.ZC_A{
+    width: 92%;
+    padding: 5px;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #0d79ff;
+    text-align: right;
+    
+}
+.ZC_A a{
+    margin-right: 10px;
+    cursor:hand;
+}
+.MerchUL{
+    width: 100%;
+    height: auto;
+}
+.MerchUll{
+    width: 100%;
+    height: auto;
+}
+.MerchUL nav{
+    width: 100%;
+    height: 5%;
+    background: url("../imgs/money.png") no-repeat;
+    background-position-x: 100px;
+}
+.MerchLi_one,
+.MerchLi_two{
+    width: 100%;
+    height: 20%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    text-align: center;
+}
+.MerchLi_one dl,
+.MerchLi_two dl{
+    -webkit-flex:1;
+    -moz-flex:1;
+    flex: 1;
+    text-align: center;
+    padding: 40px;
+}
+.MerchLi_one dl dt,
+.MerchLi_two dl dt{
+    margin-left: 60px;
+}
+.MerchLi_one dl dt,
+.MerchLi_two dl dt{
+    display: inline-block;
+    float: left;
+}
+.MerchLi_one dl dd,
+.MerchLi_two dl dd{
+    float: left;
+    line-height: 40px;
+    margin-left: 20px;
+}
+.Guarantee{
+    width: 100%;
+    height: 50%;
+    background: #fcfcfc;
+}
+.Guarantee p{
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 26px;
+    padding: 20px 0;
+}
+.GuarUl{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    width: 100%;
+    height: 80%;
+    text-align: center;
+}
+.GuarUl dl{
+    -webkit-flex:1;
+    -moz-flex:1;
+    flex: 1;
+    font-size: 18px;
+    padding: 40px 0;
+}
+.GuarUl dl dd{
+    margin-top: 30px;
+}
+
+
+.contactBox{
+    width: 100%;
+    height: 30%;
+    background: url("../img/tactBottom.png") no-repeat;
+    background-size: 100% 100%;
+}
+.footTop{
+    width: 80%;
+    height: 80%;
+    border-bottom: 1px solid #535353;
+    margin-left: 10%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+}
+.Footleft{
+    -webkit-flex: 1;
+    -moz-flex:1;
+    flex: 1;
+    color: #fff;
+    font-size: 12px;
+}
+.Footleft p{
+    margin-top: 10px;
+    padding: 20px 20px 10px 20px;
+    position: relative;
+}
+.Footleft p img{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+.Footright{
+    -webkit-flex: 1;
+    -moz-flex:1;
+    flex: 1;
+    text-align: center;
+}
+.Footright dl{
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+}
+.Footright dl dd{
+    color: #fff;
+    font-size: 12px;
+    padding: 10px;
+    text-align: center;
+}
+
+.footBottom{
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    font-size: 10px;
+    line-height: 36px;
+    position: relative;
+}
+.footBottom p{
+    color: #fff;
+}
